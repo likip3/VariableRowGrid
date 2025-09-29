@@ -7,19 +7,19 @@ using UnityEngine.UI;
 [ExecuteAlways]
 public class VariableRowGrid : LayoutGroup
 {
-[Header("Row Structure")]
+    [Header("Row Structure")]
     public List<int> rowCounts = new List<int> { 3, 4, 3 };
-[Header("Row Alignment")]
+    [Header("Row Alignment")]
     public RowAlignment rowAlignment = RowAlignment.Center;
     public Vector2 spacing = Vector2.zero;
-[Header("Dynamic Spacing")]
+    [Header("Dynamic Spacing")]
     public bool dynamicSpacing = false;
-public Vector2 spacingPercentage = new Vector2(5, 5); // in %
-private int maxColumnsInRow => (rowCounts != null && rowCounts.Count > 0) ? Math.Max(1, rowCounts.Max()) : 1;
+    public Vector2 spacingPercentage = new Vector2(5, 5); // in %
+    private int maxColumnsInRow => (rowCounts != null && rowCounts.Count > 0) ? Math.Max(1, rowCounts.Max()) : 1;
     public Vector2 cellReferenceSize = new Vector2(100, 100);
     public bool onStartOnly = true;
 
-private float _aspectRatio => cellReferenceSize.x != 0 ? cellReferenceSize.y / cellReferenceSize.x : 1f;
+    private float _aspectRatio => cellReferenceSize.x != 0 ? cellReferenceSize.y / cellReferenceSize.x : 1f;
 
     public override void CalculateLayoutInputVertical()
     {
